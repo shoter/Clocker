@@ -1,0 +1,9 @@
+name : Clocker
+main : com.xainer.clocker.Clocker
+version : 0.0
+commands:
+    clocker:
+      description: all commands used by clocker
+      usage: /clocker
+      permission: Clocker.clocker
+      permission-message: You don't have Clocker.clocker
