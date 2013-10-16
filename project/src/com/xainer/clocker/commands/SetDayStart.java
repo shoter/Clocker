@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import com.xainer.clocker.Clock;
 import com.xainer.clocker.Clocker;
 import com.xainer.clocker.Log;
+import com.xainer.clocker.MessageBuilder;
 import com.xainer.clocker.RealTimeClock;
 
 public class SetDayStart implements ClockerCommand
@@ -25,6 +26,7 @@ public class SetDayStart implements ClockerCommand
 	public boolean run(CommandSender sender, String[] args) {		
 		try
 		{
+			sender.sendMessage(MessageBuilder.build("[B]Niebieski tez[/B] moze byc [R] Fajny :) [/B] [G] Zielony? [/G]"));
 			String world;
 			String time;
 			if(args.length == 3)
