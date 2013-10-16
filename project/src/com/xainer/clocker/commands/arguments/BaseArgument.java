@@ -9,7 +9,8 @@ public abstract class BaseArgument implements Argument
 	public Object parseArgument(String arg)
 	{
 		this.arg = arg;
-		return parse(arg);
+		this.parsed = parse(arg);
+		return parsed;
 	}
 	
 	public abstract Object parse(String arg);
@@ -19,4 +20,14 @@ public abstract class BaseArgument implements Argument
 
 	@Override
 	public abstract boolean isArgGood(String arg);
+	
+	public String getArg() {
+		return arg;
+	}
+
+	public Object getParsed() {
+		return parsed;
+	}
+	
+	
 }
