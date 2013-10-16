@@ -15,8 +15,14 @@
  */
 package com.xainer.clocker;
 
+import java.util.List;
+
+import com.xainer.clocker.commands.ClockerCommand;
+
 public interface Clock
 {
 	public long getCurrentTime();
 	public void tick();
+	public ClockerCommand getCommand(String name);
+	public List<ClockerCommand> getCommands();
 }
