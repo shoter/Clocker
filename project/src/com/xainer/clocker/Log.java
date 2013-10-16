@@ -23,12 +23,19 @@ public class Log
 {
 	public static void log_message(Level level, String message)
 	{
-		Bukkit.getLogger().log(level, "[Clocker]" + message);
+		message = "[W][Clocker][/W]" + message;
+		message = MessageBuilder.build(message);
+		Bukkit.getServer().getConsoleSender().sendMessage(message );
 	}
 	
 	public static void i(String message)
 	{
 		log_message(Level.INFO, message);
+	}
+	
+	public static void e(String message)
+	{
+		log_message(Level.SEVERE, message);
 	}
 
 }

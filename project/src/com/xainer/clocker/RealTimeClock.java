@@ -18,17 +18,33 @@ package com.xainer.clocker;
 import java.util.Calendar;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class RealTimeClock implements Clock
+import com.xainer.clocker.commands.SetDayStart;
+
+public class RealTimeClock extends BaseClock
 {
+	public static boolean initialized = false;
 	AtomicReference<Long> cur_tick = new AtomicReference<Long>();
 	int dayStart = 5*60*60;
 	int nightStart = 23*60*60;
+	
+	public RealTimeClock()
+	{
+		if(initialized == false)
+			initialize();
+	}
+	
+	public static void initialize()
+	{
+		addCommand(new SetDayStart());
+		addCommand(new SetDayStart());
+		initialized = true;
+	}
+	
 	
 	public static int fullday_length = 24 * 60 * 60; // hrs * mins * secs
 	@Override
 	public long getCurrentTime() {
 		return cur_tick.get();
-		
 	}
 
 	@Override

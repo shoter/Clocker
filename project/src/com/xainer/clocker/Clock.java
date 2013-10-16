@@ -23,6 +23,4 @@ public interface Clock
 {
 	public long getCurrentTime();
 	public void tick();
-	public ClockerCommand getCommand(String name);
-	public List<ClockerCommand> getCommands();
 }

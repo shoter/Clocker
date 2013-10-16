@@ -1,3 +1,19 @@
+/*
+ *  Copyright 2013 Xainer
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
 package com.xainer.clocker.commands;
 
 import java.text.SimpleDateFormat;
@@ -14,8 +30,13 @@ import com.xainer.clocker.Log;
 import com.xainer.clocker.MessageBuilder;
 import com.xainer.clocker.RealTimeClock;
 
-public class SetDayStart implements ClockerCommand
+public class SetDayStart extends BaseCommand
 {
+	
+	public SetDayStart()
+	{
+		super(0);
+	}
 	public static String helpMsg = "/clocker " + ChatColor.GREEN + "setDayStart" + ChatColor.RESET +
 							ChatColor.YELLOW + " [WORLD] " + ChatColor.RESET +
 							ChatColor.GREEN + "HH:MM" + ChatColor.RESET;
@@ -23,7 +44,7 @@ public class SetDayStart implements ClockerCommand
 	public String noRealTimeClock = ChatColor.YELLOW + "Real time clock is not set on this world.";
 	
 	@Override
-	public boolean run(CommandSender sender, String[] args) {		
+	public boolean run(Clock clocker, CommandSender sender, String[] args) {		
 		try
 		{
 			sender.sendMessage(MessageBuilder.build("[B]Niebieski tez[/B] moze byc [R] Fajny :) [/B] [G] Zielony? [/G]"));
@@ -135,5 +156,11 @@ public class SetDayStart implements ClockerCommand
 	public void noPermission() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean execute(Clock clock, int argCase, CommandSender sender, String[] args) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

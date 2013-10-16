@@ -21,6 +21,9 @@ public class Commands implements CommandExecutor
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String alias,
 			String[] args) {
+		
+		return true;
+		/*
 		Log.i("Tu sie dostaje - " + commands.size());
 		if(args.length > 0)
 			for(ClockerCommand cCommand : commands)
@@ -35,7 +38,7 @@ public class Commands implements CommandExecutor
 						cCommand.help(sender);
 				}
 			}
-		return false;
+		return false;*/
 	}
 	
 	public void addCommand(ClockerCommand command)
