@@ -130,4 +130,10 @@ public class SetDayStart implements ClockerCommand
 	public String getName() {
 		return "Real time clock";
 	}
+
+	@Override
+	public void noPermission() {
+		// TODO Auto-generated method stub
+		
+	}
 }

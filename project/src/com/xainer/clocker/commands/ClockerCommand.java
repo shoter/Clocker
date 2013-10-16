@@ -6,6 +6,7 @@ public interface ClockerCommand
 {
 	public abstract boolean run(CommandSender sender, String[] args);
 	public abstract void help(CommandSender sender);
+	public abstract void noPermission();
 	
 	public abstract String getPermission();
 	
